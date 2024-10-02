@@ -1,3 +1,3 @@
-function doGet() {
-  return HtmlService.createHtmlOutputFromFile('Index');
+function displayMessage(message) {
+  alert(message);
 }

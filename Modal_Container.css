@@ -57,11 +57,11 @@
 
 /* Red reset button */
 .modal-reset-button {
-  background-color: red;
+  background-color: #f54242;
 }
 
 .modal-reset-button:hover {
-  background-color: darkred;
+  background-color: #942626;
 }
 
 /* Ensure buttons are aligned in a single column on mobile */

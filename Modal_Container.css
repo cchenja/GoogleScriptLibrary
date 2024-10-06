@@ -4,8 +4,7 @@
 **************************************
 */
 
- /* Center the modal */
-/* Modal Container CSS (Modal_Container.css) */
+/* Modal Container CSS */
 .modal-container {
   display: flex;
   justify-content: center;
@@ -20,33 +19,67 @@
 }
 
 .modal-box {
+  position: relative;
   width: 400px;
   padding: 20px;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
 }
-      .modal-box input {
-        width: 96%;
-        padding: 10px;
-        margin: 10px 0;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-      }
-      .modal-box button {
-        padding: 10px;
-        width: 40%;
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-       align: center;
-      }
-      .modal-box button:hover {
-        background-color: #45a049;
-      }
 
+/* Close button ("X") */
+.modal-close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+}
+
+.modal-close-button:hover {
+  color: red;
+}
+
+/* Input fields and buttons styling */
+.modal-box input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Button styles */
+.modal-box button {
+  padding: 10px;
+  width: calc(48%); /* Adjusted width for buttons side by side */
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-box button:hover {
+  background-color: #45a049;
+}
+
+/* Red reset button */
+.modal-reset-button {
+  background-color: red;
+}
+
+.modal-reset-button:hover {
+  background-color: darkred;
+}
+
+/* Ensure buttons are aligned side by side */
+.modal-button-group {
+  display: flex;
+  justify-content: space-between;
+}
 /* 
 **************************************
 ******** End Modal Container* ********

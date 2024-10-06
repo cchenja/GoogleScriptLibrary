@@ -17,7 +17,8 @@
 function checkUsername() {
   console.log('checkUsername function called');
 
-  const username = document.getElementById('modal-username').value;
+  const usernameField = document.getElementById('modal-username');
+  const username = usernameField.value;
 
   // Validate username: no spaces, at least 4 characters
   if (username.length < 4 || /\s/.test(username)) {
@@ -35,6 +36,10 @@ function checkUsername() {
     } else {
       console.log('Username is already taken');
       alert('Username is already taken, please choose another.');
+      
+      // Focus the username field and select its content
+      usernameField.focus();
+      usernameField.select();
     }
   }).isUsernameUnique(username);
 }

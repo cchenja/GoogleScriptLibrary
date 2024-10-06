@@ -74,7 +74,7 @@
 @media only screen and (max-width: 300px) {
   .modal-box {
     width: 95%; /* Full width for mobile screens */
-    position: sticky;
+    /* position: sticky; */
     top: 20px;
   }
 

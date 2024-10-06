@@ -5,19 +5,27 @@
 -->
 
  /* Center the modal */
-      .modal-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-      }
-      .modal-box {
-        width: 400px;
-        padding: 20px;
-        background-color: white;
-        border-radius: 10px;
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-      }
+/* Modal Container CSS (Modal_Container.css) */
+.modal-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Optional: for a background overlay */
+  z-index: 9999;
+}
+
+.modal-box {
+  width: 400px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
       .modal-box input {
         width: 100%;
         padding: 10px;

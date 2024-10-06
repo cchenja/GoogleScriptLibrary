@@ -18,33 +18,20 @@
   z-index: 9999;
 }
 
+/* Adjust modal-box width for mobile */
 .modal-box {
   position: relative;
-  width: 400px;
+  width: 90%; /* Adjust to 90% of screen width for smaller devices */
+  max-width: 400px; /* For larger screens, keep the maximum width */
   padding: 20px;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
 }
 
-/* Close button ("X") */
-.modal-close-button {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
-  cursor: pointer;
-}
-
-.modal-close-button:hover {
-  color: red;
-}
-
-/* Input fields styling with box-sizing to prevent overflow */
+/* Input fields styling for mobile - full width */
 .modal-box input {
-  width: 100%;
+  width: 100%; /* Full width for mobile devices */
   padding: 10px;
   margin: 10px 0;
   border: 1px solid #ccc;
@@ -52,10 +39,10 @@
   box-sizing: border-box; /* Ensures padding and border are included in the width */
 }
 
-/* Button styles */
+/* Button styles for mobile */
 .modal-box button {
   padding: 10px;
-  width: calc(48%); /* Adjusted width for buttons side by side */
+  width: 100%; /* Make buttons full width for easy tapping */
   background-color: #4CAF50;
   color: white;
   border: none;
@@ -76,10 +63,21 @@
   background-color: darkred;
 }
 
-/* Ensure buttons are aligned side by side */
+/* Ensure buttons are aligned in a single column on mobile */
 .modal-button-group {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column; /* Stack buttons vertically on mobile */
+}
+
+/* Responsive design: smaller screens */
+@media only screen and (max-width: 600px) {
+  .modal-box {
+    width: 95%; /* Full width for mobile screens */
+  }
+
+  .modal-button-group {
+    flex-direction: column; /* Stack buttons vertically */
+  }
 }
 /* 
 **************************************

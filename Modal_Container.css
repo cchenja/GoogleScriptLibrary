@@ -44,7 +44,7 @@
 
 /* Input fields styling with box-sizing to prevent overflow */
 .modal-box input {
-  width: 96%;
+  width: 98%;
   padding: 10px;
   margin: 10px 0;
   border: 1px solid #ccc;

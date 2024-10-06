@@ -42,13 +42,14 @@
   color: red;
 }
 
-/* Input fields and buttons styling */
+/* Input fields styling with box-sizing to prevent overflow */
 .modal-box input {
-  width: 90%;
+  width: 96%;
   padding: 10px;
   margin: 10px 0;
   border: 1px solid #ccc;
   border-radius: 5px;
+  box-sizing: border-box; /* Ensures padding and border are included in the width */
 }
 
 /* Button styles */

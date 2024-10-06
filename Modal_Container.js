@@ -24,6 +24,8 @@ function checkUsername() {
   if (username.length < 4 || /\s/.test(username)) {
     console.log('Username validation failed');
     alert('Username must be at least 4 characters and not contain spaces.');
+    usernameField.focus();
+    usernameField.select();
     return;
   }
 

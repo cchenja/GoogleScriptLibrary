@@ -1,8 +1,8 @@
-<!-- 
+/* 
 **************************************
 ********** Modal Container* **********
 **************************************
--->
+*/
 
 function checkUsername() {
         const username = document.getElementById('username').value;
@@ -35,8 +35,8 @@ function checkUsername() {
         }).saveCustomerData(modal_formData);
       }
 
-<!-- 
+/*
 **************************************
 ******** End Modal Container* ********
 **************************************
--->
+*/

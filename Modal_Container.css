@@ -31,6 +31,7 @@
 
 /* Input fields styling for mobile - full width */
 .modal-box input {
+  font-size: 16px;  /* Set to 16px to prevent automatic zooming */
   width: 100%; /* Full width for mobile devices */
   padding: 10px;
   margin: 10px 0;

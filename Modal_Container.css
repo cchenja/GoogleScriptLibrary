@@ -22,7 +22,7 @@
 .modal-box {
   position: relative;
   width: 90%; /* Adjust to 90% of screen width for smaller devices */
-  max-width: 150px; /* For larger screens, keep the maximum width */
+  max-width: 200px; /* For larger screens, keep the maximum width */
   padding: 20px;
   background-color: white;
   border-radius: 10px;
@@ -74,6 +74,8 @@
 @media only screen and (max-width: 300px) {
   .modal-box {
     width: 95%; /* Full width for mobile screens */
+    position: sticky;
+    top: 20px;
   }
 
   .modal-button-group {

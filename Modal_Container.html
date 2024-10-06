@@ -12,8 +12,8 @@
       <h2>Sign Up</h2>
       <form id="modal-signUpForm">
         <input type="text" id="modal-username" placeholder="Username" required>
-        <button type="button" id="modal-checkUsernameButton" onclick="checkUsername()">Check Username</button>
-        
+        <!-- <button type="button" id="modal-checkUsernameButton" onclick="checkUsername()">Check Username</button> -->
+        <button type="button" id="modal-checkUsernameButton" >Check Username</button>
         <div id="modal-formFields" style="display:none;">
           <input type="text" id="modal-firstName" placeholder="First Name" required>
           <input type="text" id="modal-lastName" placeholder="Last Name" required>
@@ -26,7 +26,8 @@
           <!-- Modal reset and submit buttons beside each other -->
           <div class="modal-button-group">
             <button type="button" onclick="submitForm()">Sign Up</button>
-            <button type="button" id="modal-resetButton" class="modal-reset-button" onclick="resetForm()">Reset</button>
+            <!-- <button type="button" id="modal-resetButton" class="modal-reset-button" onclick="resetForm()">Reset</button> -->
+            <button type="button" id="modal-resetButton" class="modal-reset-button" >Reset</button>
           </div>
         </div>
       </form>

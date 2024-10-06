@@ -14,25 +14,30 @@
       document.getElementById('modal-checkUsernameButton').style.display = 'inline-block'; // Show "Check Username" button again
     }
 
-    function checkUsername() {
-      const username = document.getElementById('modal-username').value;
-      
-      // Validate username: no spaces, at least 4 characters
-      if (username.length < 4 || /\s/.test(username)) {
-        alert('Username must be at least 4 characters and contain no spaces.');
-        return;
-      }
+function checkUsername() {
+  console.log('checkUsername function called');
 
-      google.script.run.withSuccessHandler((isUnique) => {
-        if (isUnique) {
-          alert('Username is available!');
-          document.getElementById('modal-formFields').style.display = 'block'; // Show additional fields
-          document.getElementById('modal-checkUsernameButton').style.display = 'none'; // Hide "Check Username" button
-        } else {
-          alert('Username is already taken, please choose another.');
-        }
-      }).isUsernameUnique(username);
+  const username = document.getElementById('modal-username').value;
+
+  // Validate username: no spaces, at least 4 characters
+  if (username.length < 4 || /\s/.test(username)) {
+    console.log('Username validation failed');
+    alert('Username must be at least 4 characters and contain no spaces.');
+    return;
+  }
+
+  google.script.run.withSuccessHandler((isUnique) => {
+    if (isUnique) {
+      console.log('Username is available');
+      alert('Username is available!');
+      document.getElementById('modal-formFields').style.display = 'block'; // Show additional fields
+      document.getElementById('modal-checkUsernameButton').style.display = 'none'; // Hide "Check Username" button
+    } else {
+      console.log('Username is already taken');
+      alert('Username is already taken, please choose another.');
     }
+  }).isUsernameUnique(username);
+}
 
     function submitForm() {
       const formData = {

@@ -22,7 +22,7 @@
 .modal-box {
   position: relative;
   width: 90%; /* Adjust to 90% of screen width for smaller devices */
-  max-width: 200px; /* For larger screens, keep the maximum width */
+  max-width: 400px; /* For larger screens, keep the maximum width */
   padding: 20px;
   background-color: white;
   border-radius: 10px;
@@ -40,7 +40,7 @@
   box-sizing: border-box; /* Ensures padding and border are included in the width */
 }
 
-/* Button styles for mobile */
+/* General Button Styles in Modal Box */
 .modal-box button {
   padding: 10px;
   width: 100%; /* Make buttons full width for easy tapping */
@@ -52,16 +52,16 @@
 }
 
 .modal-box button:hover {
-  background-color: #45a049;
+  background-color: #45a049; /* Hover effect */
 }
 
-/* Red reset button */
+/* Specific styles for reset button to override */
 .modal-reset-button {
-  background-color: #f54242;
+  background-color: #f54242 !important;  /* !important to ensure it overrides */
 }
 
 .modal-reset-button:hover {
-  background-color: #942626;
+  background-color: #942626 !important;  /* !important for hover state */
 }
 
 /* Ensure buttons are aligned in a single column on mobile */

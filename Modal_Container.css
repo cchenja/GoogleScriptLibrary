@@ -22,7 +22,7 @@
 .modal-box {
   position: relative;
   width: 90%; /* Adjust to 90% of screen width for smaller devices */
-  max-width: 400px; /* For larger screens, keep the maximum width */
+  max-width: 150px; /* For larger screens, keep the maximum width */
   padding: 20px;
   background-color: white;
   border-radius: 10px;
@@ -31,7 +31,7 @@
 
 /* Input fields styling for mobile - full width */
 .modal-box input {
-  font-size: 16px;  /* Set to 16px to prevent automatic zooming */
+  font-size: 18px;  /* Set to 16px to prevent automatic zooming */
   width: 100%; /* Full width for mobile devices */
   padding: 10px;
   margin: 10px 0;
@@ -71,7 +71,7 @@
 }
 
 /* Responsive design: smaller screens */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 300px) {
   .modal-box {
     width: 95%; /* Full width for mobile screens */
   }

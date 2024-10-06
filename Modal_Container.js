@@ -4,20 +4,36 @@
 **************************************
 -->
 
-<form id="signUpForm">
-    <input type="text" id="username" placeholder="Username" required>
-    <button type="button" onclick="checkUsername()">Check Username</button>
-    <div id="formFields" style="display:none;">
-      <input type="text" id="firstName" placeholder="First Name" required>
-      <input type="text" id="lastName" placeholder="Last Name" required>
-      <input type="email" id="email" placeholder="Email" required>
-      <input type="tel" id="phone" placeholder="Phone Number (Optional)">
-      <input type="password" id="password" placeholder="Password" required>
-      <input type="text" id="secretWord1" placeholder="Secret Word 1" required>
-      <input type="text" id="secretWord2" placeholder="Secret Word 2" required>
-      <button type="button" onclick="submitForm()">Sign Up</button>
-    </div>
-</form>
+function checkUsername() {
+        const username = document.getElementById('username').value;
+        
+        google.script.run.withSuccessHandler((isUnique) => {
+          if (isUnique) {
+            alert('Username is available!');
+            document.getElementById('formFields').style.display = 'block';
+          } else {
+            alert('Username is already taken, please choose another.');
+          }
+        }).isUsernameUnique(username);
+      }
+
+      function modal_submitForm() {
+        const modal_formData = {
+          username: document.getElementById('username').value,
+          firstName: document.getElementById('firstName').value,
+          lastName: document.getElementById('lastName').value,
+          email: document.getElementById('email').value,
+          phone: document.getElementById('phone').value,
+          password: document.getElementById('password').value,
+          secretWord1: document.getElementById('secretWord1').value,
+          secretWord2: document.getElementById('secretWord2').value
+        };
+
+        google.script.run.withSuccessHandler(() => {
+          alert('Sign up successful!');
+          google.script.host.close(); // Close the modal after submission
+        }).saveCustomerData(modal_formData);
+      }
 
 <!-- 
 **************************************

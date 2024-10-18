@@ -46,12 +46,11 @@ var retrievedData = {}; // Define a global variable to store the retrieved data
       }
     }
     
-    function SubmitPrintShippingLabelForm(currentPiecesInput = null, totalPiecesInput = null, drControlInput = null, forwarderInput = null) {
+    function SubmitPrintShippingLabelForm() {
       // If no arguments are passed, capture the values from the form inputs
-      const currentPieces = currentPiecesInput || document.getElementById('currentPieces').value.trim();
-      const totalPieces = totalPiecesInput || document.getElementById('totalPieces').value.trim();
-      const drControl = drControlInput || document.getElementById('drControl').value.trim();
-      const forwarder = forwarderInput || document.getElementById('forwarder').value.trim();
+      const currentPieces = currentPiecesInput;
+      const totalPieces = totalPiecesInput;
+      const forwarder = forwarderInput;
       let valid = true;
 
       if (!/^\d+$/.test(currentPieces)) {
@@ -68,13 +67,6 @@ var retrievedData = {}; // Define a global variable to store the retrieved data
         document.getElementById('totalPieces-error').style.display = 'none';
       }
 
-      if (!/^\d+$/.test(drControl)) {
-        document.getElementById('drControl-error').style.display = 'block';
-        valid = false;
-      } else {
-        document.getElementById('drControl-error').style.display = 'none';
-      }
-
       if (!forwarder) {
         document.getElementById('forwarder-error').style.display = 'block';
         valid = false;
@@ -86,7 +78,7 @@ var retrievedData = {}; // Define a global variable to store the retrieved data
         return;
       }
 
-      const userInputs = { currentPieces, totalPieces, drControl, forwarder };
+      const userInputs = { currentPieces, totalPieces, forwarder };
 
       google.script.run.withSuccessHandler(function(success) {
         if (success) {
@@ -237,7 +229,6 @@ var retrievedData = {}; // Define a global variable to store the retrieved data
       document.getElementById('DRnumber').value = '';
       document.getElementById('currentPieces').value = '';
       document.getElementById('totalPieces').value = '';
-      document.getElementById('drControl').value = '';
       document.getElementById('forwardingCarrier').value = '';
       document.getElementById('totalPieces').value = '';
 

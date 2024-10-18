@@ -184,7 +184,7 @@ var retrievedData = {}; // Define a global variable to store the retrieved data
                   document.getElementById('confirmation-message').style.display = 'block';
 
                   // After print is complete, reset the form
-                  resetForm();
+                  ResetPrintShippingLabelForm();
 
                   setTimeout(() => {
                     document.getElementById('confirmation-message').style.display = 'none';
@@ -209,7 +209,7 @@ var retrievedData = {}; // Define a global variable to store the retrieved data
       }).preparePrintData();
     }
 
-    function resetForm() {
+    function ResetPrintShippingLabelForm() {
       // Hide or remove buttons
  //*     const resetButton = document.querySelector('.btn-reset');
  //*     if (resetButton) resetButton.style.display = 'none'; // Hide the reset button

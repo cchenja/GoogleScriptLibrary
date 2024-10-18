@@ -1,0 +1,116 @@
+  <div class="container2">
+    <div class="centered-form">
+    <h1>Print Shipping Label</h1>
+    
+    <div class="container3">
+      <label for="searchValue">ENTER DOCK RECEIPT OF CONSIGNEE PHONE NUMBER</label>
+      <input type="text" id="searchValue" name="searchValue" placeholder="DRnumber or Consignee Phone Number" required>
+      <div id="search-error" class="error-message">Please enter a valid Dock Receipt Number or Consignee Phone Number.</div>
+    </div>
+    <div class="button-container1">
+      <button class="btn btn-search" onclick="searchPrintShippingLabelReceipt()">Search</button>
+      <button class="btn btn-manual" onclick="showManualForm()">Manual Label</button>
+    </div>
+    </div>
+    
+    <div class="loading-spinner" id="loading-spinner">
+      <div class="spinner"></div>
+      <p>Processing...</p>
+    </div>
+    
+    <div id="form-section" class="form-section" style="display:none;">
+      <div class="form-grid">
+        <!-- Read-Only Fields -->
+        <div>
+          <label for="consigneeFirstName">Consignee First Name:</label>
+          <input type="text" id="consigneeFirstName" readonly class="readonly-input">
+        </div>
+        <div>
+          <label for="consigneeLastName">Consignee Last Name:</label>
+          <input type="text" id="consigneeLastName" readonly class="readonly-input">
+        </div>
+        <div>
+          <label for="consigneeAddress">Consignee Address:</label>
+          <textarea id="consigneeAddress" readonly class="readonly-input"></textarea>
+        </div>
+        <div>
+          <label for="consigneeTelephone">Consignee Telephone:</label>
+          <input type="text" id="consigneeTelephone" readonly class="readonly-input">
+        </div>
+        <div>
+          <label for="comments">Comments:</label>
+          <textarea id="comments" readonly class="readonly-input"></textarea>
+        </div>
+        <div>
+          <label for="DRnumber">Dock Receipt Number:</label>
+          <input type="text" id="DRnumber" readonly class="readonly-input">
+        </div>
+
+        <!-- Editable Fields -->
+        <div class="container4">
+        <div>
+          <!-- <label for="currentPieces">Current Piece:</label> -->
+          <input type="text" id="currentPieces" placeholder="CURRENT PIECES">
+          <div id="currentPieces-error" class="error-message">Please enter a valid number.</div>
+        </div>
+        <div>
+          <!-- <label for="totalPieces">Total Pieces:</label> -->
+          <input type="text" id="totalPieces" placeholder="TOTAL PIECES">
+          <div id="totalPieces-error" class="error-message">Please enter a valid number.</div>
+        </div>
+        <div>
+          <!-- <label for="drControl">DR Control No:</label> -->
+          <input type="text" id="drControl" placeholder="CONTROL NO">
+          <div id="drControl-error" class="error-message">Please enter a valid number.</div>
+        </div>
+        <div>
+          <!-- <label for="forwarder">Forwarder:</label> -->
+          <input type="text" id="forwardingCarrier">
+          <div id="forwarder-error" class="error-message">This field is required.</div>
+        </div>
+      </div>
+      </div>
+      <div class="button-container">
+        <button class="btn btn-update" onclick="submitPrintShippingLabelForm()">Submit</button>
+        <button class="btn btn-reset"  onclick="resetForm()" >Reset Form</button>
+      </div>
+      
+      <div id="confirmation-message" style="display:none; margin-top: 10px; text-align: center; color: green;">
+        Data updated successfully.
+      </div>
+      
+      <div id="error-message" style="display:none; margin-top: 10px; text-align: center; color: red;">
+        Failed to update data.
+      </div>
+    </div>
+  </div>
+
+    <div class="container1 hidden">
+    <h2>Manual Shipping Label</h2>
+    <form id="shippingForm">
+      <input type="text" id="mconsigneeFirstName" name="mconsigneeFirstName" placeholder="Consignee First Name" required>
+      <input type="text" id="mconsigneeLastName" name="mconsigneeLastName" placeholder="Consignee Last Name" required>
+      <input type="text" id="mconsigneeAddress" name="mconsigneeAddress" placeholder="Consignee Address" required>
+      <input type="tel" id="mconsigneePhoneNumber" name="mconsigneePhoneNumber" placeholder="Consignee Phone Number" pattern="\d*" maxlength="10" required>
+      
+      <div class="radio-group">
+        <label><input type="radio" name="destination" value="KIN" required> KINGSTON</label>
+        <label><input type="radio" name="destination" value="MBJ" required> MONTEGO BAY</label>
+      </div>
+
+      <input type="text" id="mdrNumber" name="mdrNumber" placeholder="DR Number" required>
+      <label>Current Piece</label>
+        <input type="number" id="piece" name="piece" placeholder="Piece" value="1" min="1" required> 
+     <label>Total Pieces</label>
+        <input type="number" id="pieces" name="pieces" placeholder="Pieces" value="1" min="1" required> Total Pieces </label>
+      <input type="text" id="mforwarder" name="mforwarder" placeholder="Forwarder" required>
+
+      <div class="button-container1">
+        <input type="button" class="btn-update" value="Reset" onclick="ResetPrintShippingLabelManualForm()">
+        <input type="button" class="btn-reset" id="onSubmit" value="Submit" onclick="submitManualLabel()" style="display: inline-block;">
+        <input type="button" id="printlabels" value="Print Labels" onclick="printLabels(pieces)" style="display: none;">
+        <input type="button" id="printonelabel" value="Print Current Label" onclick="printLabels(1)" style="display: none;">
+      </div>
+    </form>
+  </div>
+  

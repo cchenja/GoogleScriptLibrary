@@ -201,7 +201,7 @@ var retrievedData = {}; // Define a global variable to store the retrieved data
     }
 
     function ResetPrintShippingLabelForm() {
-      // Hide or remove buttons
+    // Hide or remove buttons
  //*     const resetButton = document.querySelector('.btn-reset');
  //*     if (resetButton) resetButton.style.display = 'none'; // Hide the reset button
      

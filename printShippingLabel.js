@@ -46,7 +46,7 @@ var retrievedData = {}; // Define a global variable to store the retrieved data
       }
     }
     
-    function submitForm() {
+    function SubmitPrintShippingLabelForm() {
       const currentPieces = document.getElementById('currentPieces').value.trim();
       const totalPieces = document.getElementById('totalPieces').value.trim();
       const drControl = document.getElementById('drControl').value.trim();
@@ -322,7 +322,7 @@ function submitManualLabel() {
   document.getElementById('printlabels').style.display = 'inline-block'; // or 'block'
   document.getElementById('printonelabel').style.display = 'inline-block'; // or 'block'
   document.getElementById('onSubmit').style.display = 'none'; // or 'block'
-  }).submitForm(formData);
+  }).SubmitPrintShippingLabelForm(formData);
   
 }
 

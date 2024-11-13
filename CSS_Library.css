@@ -40,9 +40,13 @@
 }
 
 @keyframes move {
+  /*
   0% { background-color: #4CAF50; }
   50% { background-color: #ddd; }
-  100% { background-color: #4CAF50; }
+  100% { background-color: #4CAF50; } */
+  0% { background-color: #03ad0a; }
+  50% { background-color: #d6d306; }
+  100% { background-color: #ab0510; }
 }
 
 .counter {

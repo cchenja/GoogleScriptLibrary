@@ -14,7 +14,7 @@
   display: inline-block;
   width: 8px;
   height: 16px;
-  background-color: #ddd;
+  background-color: #fffff;
   margin: 2px;
   animation: move 1s infinite ease-in-out;
 }
